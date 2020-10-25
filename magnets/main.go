@@ -39,7 +39,7 @@ func solveTheProblem() {
 	bufStdin := bufio.NewReader(os.Stdin)
 
 	var n int // number of magnets
-	fmt.Scan(&n)
+	fmt.Fscan(bufStdin, &n)
 
 	magnets := make([]int, n)
 	for i := 0; i < n; i++ {
