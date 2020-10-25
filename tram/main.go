@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/116/A
 // A. Tram
 // time limit per test
 // 2 seconds

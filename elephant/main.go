@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/617/A
 // A. Elephant
 // time limit per test
 // 1 second

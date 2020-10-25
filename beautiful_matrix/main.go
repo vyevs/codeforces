@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/263/A
 // A. Beautiful Matrix
 // time limit per test
 // 2 seconds

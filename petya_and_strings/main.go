@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/112/A
 // A. Petya and Strings
 // time limit per test
 // 2 seconds

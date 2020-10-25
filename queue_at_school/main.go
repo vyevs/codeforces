@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/266/B
 // B. Queue at the School
 // time limit per test
 // 2 seconds
@@ -28,16 +29,14 @@ import "fmt"
 
 func main() {
 	var n, t int
-	var queue string
+	var queue []byte
 	fmt.Scan(&n, &t, &queue)
 
-	queueBytes := []byte(queue)
-
 	for i := 0; i < t; i++ {
-		for i := 0; i < len(queueBytes)-1; {
-			if queueBytes[i] == 'B' && queueBytes[i+1] == 'G' {
-				queueBytes[i] = 'G'
-				queueBytes[i+1] = 'B'
+		for i := 0; i < len(queue)-1; {
+			if queue[i] == 'B' && queue[i+1] == 'G' {
+				queue[i] = 'G'
+				queue[i+1] = 'B'
 				i += 2
 				// if we did a swap, we can jump past both of the swapped places
 				// since we don't want to keep doing swaps in a situation like BGG, the end result should be GBG, not GGB
@@ -47,5 +46,5 @@ func main() {
 		}
 	}
 
-	fmt.Print(string(queueBytes))
+	fmt.Print(string(queue))
 }

@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/266/A
 // A. Stones on the Table
 // time limit per test
 // 2 seconds
@@ -37,7 +38,7 @@ func main() {
 		return
 	}
 
-	// if we remove a stone at position p, stones at positions p-1 and p+1 are not adjacent, and may be the same color!
+	// if we remove a stone at position p, stones at positions p-1 and p+1 are adjacent, and may be the same color!
 	// this requires that we keep removing stones until the 2 adjacent stones we are looking at are no longer the same color
 	// first and next are the 2 positions we are examining during any one iteration
 	first := 0

@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/231/A
 // A. Team
 // time limit per test
 // 2 seconds

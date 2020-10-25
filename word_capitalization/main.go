@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/281/A
 // A. Word Capitalization
 // time limit per test
 // 2 seconds
@@ -23,14 +24,12 @@ import "fmt"
 // Output the given word after capitalization.
 
 func main() {
-	var word string
+	var word []byte
 	fmt.Scan(&word)
-
-	wordBytes := []byte(word)
 
 	// the bit 00100000 controls whether an ascii alphabet character is uppercase, on for lower case, off for upper case
 	// ANDing against 0xdf turns the bit off if it was on, and has no effect otherwise, capitalizing the first character
-	wordBytes[0] &= 0xdf
+	word[0] &= 0xdf
 
-	fmt.Print(string(wordBytes))
+	fmt.Print(string(word))
 }

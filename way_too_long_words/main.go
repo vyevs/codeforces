@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/71/A
 // A. Way Too Long Words
 // time limit per test
 // 1 second

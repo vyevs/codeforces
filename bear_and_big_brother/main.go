@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// https://codeforces.com/problemset/problem/791/A
 // A. Bear and Big Brother
 // time limit per test
 // 1 second

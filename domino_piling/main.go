@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/50/A
 // A. Domino piling
 // time limit per test
 // 2 seconds

@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// https://codeforces.com/problemset/problem/339/A
 // A. Helpful Maths
 // time limit per test
 // 2 seconds

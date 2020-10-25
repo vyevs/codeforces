@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/546/A
 // A. Soldier and Bananas
 // time limit per test
 // 1 second

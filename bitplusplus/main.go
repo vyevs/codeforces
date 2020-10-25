@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://codeforces.com/problemset/problem/282/A
 // A. Bit++
 // time limit per test
 // 1 second
