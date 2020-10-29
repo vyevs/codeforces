@@ -1,5 +1,11 @@
 package main
 
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
 // https://codeforces.com/problemset/problem/1343/B
 // B. Balanced Array
 // time limit per test
@@ -60,5 +66,47 @@ package main
 // For each test case, print the answer — "NO" (without quotes), if there is no suitable answer for the given test case or "YES" in the first line and any suitable array a1,a2,…,an
 // (1≤ai≤109) satisfying conditions from the problem statement on the second line.
 
+var bufStdin = bufio.NewReader(os.Stdin)
+var bufStdout = bufio.NewWriter(os.Stdout)
+
 func main() {
+	defer bufStdout.Flush()
+
+	var t int
+	_, _ = fmt.Fscan(bufStdin, &t)
+
+	tests := make([]int, t)
+	for i := 0; i < t; i++ {
+		_, _ = fmt.Fscan(bufStdin, &tests[i])
+	}
+
+	for i := 0; i < t; i++ {
+		v := tests[i]
+
+		if v%4 != 0 {
+			_, _ = fmt.Fprintln(bufStdout, "NO")
+		} else {
+			_, _ = fmt.Fprintln(bufStdout, "YES")
+			arr := constructArray(v)
+			for _, v := range arr {
+				_, _ = fmt.Fprint(bufStdout, v, " ")
+			}
+			_, _ = fmt.Fprintln(bufStdout)
+		}
+	}
+}
+
+func constructArray(n int) []int {
+	arr := make([]int, 0, n)
+
+	for i := 0; i < n/2; i++ {
+		arr = append(arr, (i+1)*2)
+	}
+
+	for i := 0; i < n/2; i++ {
+		arr = append(arr, i*2+1)
+	}
+	arr[n-1] += n / 2
+
+	return arr
 }
