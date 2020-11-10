@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 )
 
 // https://codeforces.com/problemset/problem/158/B
@@ -36,10 +37,48 @@ func main() {
 		_, _ = fmt.Fscan(bufStdin, &ss[i])
 	}
 
-	low, high := 0, len(ss)-1
+	sort.Ints(ss)
 
-	for low <= high {
+	var nCars int
+	var curGroup int
 
+	for low, high := 0, len(ss)-1; low <= high; {
+		lv, hv := ss[low], ss[high]
+
+		if curGroup+hv == 4 {
+			nCars++
+			high--
+			curGroup = 0
+			continue
+		}
+
+		if curGroup+lv == 4 {
+			nCars++
+			low++
+			curGroup = 0
+			continue
+		}
+
+		if curGroup+hv < 4 {
+			curGroup += hv
+			high--
+			continue
+		}
+
+		if curGroup+lv < 4 {
+			curGroup += lv
+			low++
+			continue
+		}
+
+		if curGroup+lv > 4 {
+			nCars++
+			curGroup = 0
+		}
+	}
+
+	if curGroup > 0 {
+		nCars++
 	}
 
 	_, _ = fmt.Print(nCars)
