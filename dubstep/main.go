@@ -43,5 +43,4 @@ func main() {
 			_, _ = fmt.Print(string(word), " ")
 		}
 	}
-
 }
